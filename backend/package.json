@@ -5,10 +5,16 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "docker:create": "sudo docker run --name mongo -p 27017:27017 -d mongo",
+    "docker:list": "sudo docker container ls",
+    "docker:listAll": "sudo docker container ls -a",
+    "docker:stop": "sudo docker stop mongo",
+    "docker:start": "sudo docker start mongo"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
