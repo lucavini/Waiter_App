@@ -1,17 +1,13 @@
 import { Router } from 'express';
 
+import CategoryController from '../controllers/CategoryController';
+
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.send('OK get categories');
-});
+router.get('/', CategoryController.listCategories);
 
-router.post('/', (req, res) => {
-  res.send('OK post categories');
-});
+router.post('/', CategoryController.createCategories);
 
-router.get('/:categoryId/products', (req, res) => {
-  res.send('OK category products');
-});
+router.get('/:categoryId/products', CategoryController.findProductsByCategoryId);
 
 export default router;
