@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-export const Category = model('Category',new Schema({
+const categorySchema = new Schema<models.Category>({
   name: {
     type: String,
     required: true,
@@ -10,5 +10,6 @@ export const Category = model('Category',new Schema({
     type: String,
     required: true,
   },
-}),
-);
+});
+
+export const Category = model('Category', categorySchema);
