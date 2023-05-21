@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
+import { Product as IProduct } from '../models';
 
-const productSchema = new Schema<models.Product>({
+const productSchema = new Schema<IProduct>({
   name: {
     type: String,
     required: true,

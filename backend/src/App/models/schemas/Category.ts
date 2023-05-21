@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
+import { Category as ICategory } from '../models';
 
-const categorySchema = new Schema<models.Category>({
+const categorySchema = new Schema<ICategory>({
   name: {
     type: String,
     required: true,
