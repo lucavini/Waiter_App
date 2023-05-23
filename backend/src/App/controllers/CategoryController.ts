@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import CategoryRepository from '../repositories/CategoryRepository';
+import CategoryRepository from '@Repositories/CategoryRepository';
 
 class CategoryController {
   async index(req: Request, res: Response) {

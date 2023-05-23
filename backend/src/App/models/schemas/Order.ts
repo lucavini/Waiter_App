@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose';
-import { Status } from '../enums/status';
+import { Status } from '~Enums/status';
 import { Order as IOrder } from '../models';
 
 const orderSchema = new Schema<IOrder>({

@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import { Status } from './enums/status';
+import { Status } from '~Enums/status';
 
 export as namespace models;
 

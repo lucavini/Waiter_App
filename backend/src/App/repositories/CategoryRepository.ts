@@ -1,4 +1,4 @@
-import Category from '../models/schemas/Category';
+import Category from '@Models/Category';
 
 class CategoryRepository {
   async listCategories() {

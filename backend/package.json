@@ -6,14 +6,23 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc",
+    "postinstall": "link-module-alias",
     "docker:create": "sudo docker run --name mongo -p 27017:27017 -d mongo",
     "docker:list": "sudo docker container ls",
     "docker:listAll": "sudo docker container ls -a",
     "docker:stop": "sudo docker stop mongo",
     "docker:start": "sudo docker start mongo"
   },
+  "_moduleAliases": {
+    "@Models": "dist/App/models/schemas",
+    "@Repositories": "dist/App/repositories",
+    "@Controllers": "dist/App/controllers",
+    "~Enums/*": "dist/App/models/enums"
+  },
   "dependencies": {
     "express": "^4.18.2",
+    "link-module-alias": "^1.2.0",
+    "module-alias": "^2.2.2",
     "mongoose": "^7.2.0"
   },
   "devDependencies": {

@@ -1,8 +1,10 @@
+import 'module-alias/register';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './App/routes/router';
 
-mongoose.connect('mongodb://localhost:27017/WaiterApp')
+mongoose
+  .connect('mongodb://localhost:27017/WaiterApp')
   .then(() => {
     const app = express();
     const port = 3333;
