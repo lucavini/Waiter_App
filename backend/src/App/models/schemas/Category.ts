@@ -5,10 +5,12 @@ const categorySchema = new Schema<ICategory>({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
 
   icon: {
     type: String,
+    unique: true,
     required: true,
   },
 });

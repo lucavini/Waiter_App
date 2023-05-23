@@ -4,6 +4,7 @@ import { Product as IProduct } from '../models';
 const productSchema = new Schema<IProduct>({
   name: {
     type: String,
+    unique: true,
     required: true,
   },
 
