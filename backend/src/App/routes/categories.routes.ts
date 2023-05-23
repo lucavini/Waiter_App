@@ -4,10 +4,10 @@ import CategoryController from '../controllers/CategoryController';
 
 const router = Router();
 
-router.get('/', CategoryController.listCategories);
+router.get('/', CategoryController.index);
 
-router.post('/', CategoryController.createCategories);
+router.post('/', CategoryController.store);
 
-router.get('/:categoryId/products', CategoryController.findProductsByCategoryId);
+router.get('/:categoryId/products', CategoryController.indexProductsByCategoryId);
 
 export default router;

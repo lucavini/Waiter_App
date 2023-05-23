@@ -2,21 +2,26 @@ import { Request, Response } from 'express';
 import Category from '../models/schemas/Category';
 
 class CategoryController {
-  async listCategories(req: Request, res: Response) {
+  async index(req: Request, res: Response) {
     const categories = await Category.find();
 
     res.json(categories);
   }
 
-  async createCategories(req: Request, res: Response) {
-    const { icon, name } = req.body;
+  async store(req: Request, res: Response) {
+    try {
+      const { icon, name } = req.body;
 
-    const category = await Category.create({ icon, name });
+      const category = await Category.create({ icon, name });
 
-    res.json(category);
+      res.send(201).json(category);
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
   }
 
-  async findProductsByCategoryId(req: Request, res: Response) {
+  async indexProductsByCategoryId(req: Request, res: Response) {
     res.send('ok category');
   }
 }
