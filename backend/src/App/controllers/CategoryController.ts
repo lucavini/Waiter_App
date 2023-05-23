@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import Category from '../models/schemas/Category';
+import CategoryRepository from '../repositories/CategoryRepository';
 
 class CategoryController {
   async index(req: Request, res: Response) {
-    const categories = await Category.find();
+    const categories = await CategoryRepository.listCategories();
 
     res.json(categories);
   }
@@ -12,16 +12,16 @@ class CategoryController {
     try {
       const { icon, name } = req.body;
 
-      const category = await Category.create({ icon, name });
+      const category = await CategoryRepository.createCategory({ icon, name });
 
-      res.send(201).json(category);
+      res.status(201).json(category);
     } catch (err) {
       console.error(err);
       res.sendStatus(500);
     }
   }
 
-  async indexProductsByCategoryId(req: Request, res: Response) {
+  indexProductsByCategoryId(req: Request, res: Response) {
     res.send('ok category');
   }
 }
