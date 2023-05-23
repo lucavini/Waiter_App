@@ -1,4 +1,4 @@
-import 'module-alias/register';
+import './path.config';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './App/routes/router';
