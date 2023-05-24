@@ -6,4 +6,5 @@ moduleAlias.addAliases({
   '@Repositories': __dirname + '/App/repositories',
   '@Controllers': __dirname + '/App/controllers',
   '~Enums': __dirname + '/App/models/enums',
+  '~Errors': __dirname + '/App/models/errors',
 });
