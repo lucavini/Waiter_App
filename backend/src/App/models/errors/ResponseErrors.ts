@@ -1,6 +1,7 @@
 enum ResponseErrors {
   ICON_REQUIRED = 'ICON_REQUIRED',
   NAME_REQUIRED = 'NAME_REQUIRED',
+  PRODUCT_IMAGE_REQUIRED = 'PRODUCT_IMAGE_REQUIRED',
 }
 
 export default ResponseErrors;
