@@ -1,4 +1,5 @@
 import './path.config';
+import path from 'node:path';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './App/routes/router';
@@ -13,6 +14,10 @@ mongoose
     app.use(express.json());
     app.use(router);
     app.use(errorHandler);
+    app.use(
+      '/uploads',
+      express.static(path.resolve(__dirname, '..', 'uploads')),
+    );
 
     app.listen(port, () => {
       console.log(`🚀 Server is running on http://localhost:${port}`);
