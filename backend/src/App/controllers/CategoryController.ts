@@ -4,9 +4,14 @@ import ResponseErrors from '~Errors/ResponseErrors';
 
 class CategoryController {
   async index(req: Request, res: Response) {
-    const categories = await CategoryRepository.listCategories();
+    try {
+      const categories = await CategoryRepository.listCategories();
 
-    res.json(categories);
+      res.json(categories);
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
   }
 
   async store(req: Request, res: Response) {
@@ -14,11 +19,15 @@ class CategoryController {
       const { icon, name } = req.body;
 
       if (!icon) {
-        return res.status(400).json({ error: ResponseErrors.ICON_REQUIRED });
+        return res.status(400).json({
+          error: ResponseErrors.ICON_REQUIRED,
+        });
       }
-      
+
       if (!name) {
-        return res.status(400).json({ error: ResponseErrors.ICON_REQUIRED });
+        return res.status(400).json({
+          error: ResponseErrors.NAME_REQUIRED,
+        });
       }
 
       const category = await CategoryRepository.createCategory({
