@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import CategoryRepository from '@Repositories/CategoryRepository';
+import ResponseErrors from '~Errors/ResponseErrors';
 
 class CategoryController {
   async index(req: Request, res: Response) {
@@ -12,7 +13,18 @@ class CategoryController {
     try {
       const { icon, name } = req.body;
 
-      const category = await CategoryRepository.createCategory({ icon, name });
+      if (!icon) {
+        return res.status(400).json({ error: ResponseErrors.ICON_REQUIRED });
+      }
+      
+      if (!name) {
+        return res.status(400).json({ error: ResponseErrors.ICON_REQUIRED });
+      }
+
+      const category = await CategoryRepository.createCategory({
+        icon,
+        name,
+      });
 
       res.status(201).json(category);
     } catch (err) {
