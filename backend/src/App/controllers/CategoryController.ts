@@ -42,8 +42,16 @@ class CategoryController {
     }
   }
 
-  indexProductsByCategoryId(req: Request, res: Response) {
-    res.send('ok category');
+  async indexProductsByCategoryId(req: Request, res: Response) {
+    try {
+      const { categoryId } = req.params;
+      const products = await CategoryRepository.listProductsByCategoryId(categoryId);
+
+      res.json(products);
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
   }
 }
 

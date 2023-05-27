@@ -1,4 +1,5 @@
 import Category from '@Models/Category';
+import Product from '@Models/Product';
 
 class CategoryRepository {
   async listCategories() {
@@ -13,6 +14,12 @@ class CategoryRepository {
     const createdCategory = await Category.create({ icon, name });
 
     return createdCategory;
+  }
+
+  async listProductsByCategoryId(id: string) {
+    const products = await Product.find().where('category').equals(id);
+
+    return products;
   }
 }
 
