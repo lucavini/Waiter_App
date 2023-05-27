@@ -30,7 +30,7 @@ class ProductController {
         description,
         price: Number(price),
         category,
-        ingredients: JSON.parse(ingredients),
+        ingredients: ingredients ? JSON.parse(ingredients) : [],
         imagePath: imagePath,
       });
 
