@@ -21,8 +21,8 @@ export interface Product {
 
 export interface Order {
   table: string;
-  status: Status;
-  createdAt: Date;
+  status?: Status;
+  createdAt?: Date;
   products: {
     product: Types.ObjectId;
     quantity: number;

@@ -1,21 +1,14 @@
+import OrderController from '@Controllers/OrderController';
 import { Router } from 'express';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.send('OK get orders');
-});
+router.get('/', OrderController.index);
 
-router.post('/', (req, res) => {
-  res.send('OK');
-});
+router.post('/', OrderController.store);
 
-router.patch('/:orderId', (req, res) => {
-  res.send('OK');
-});
+router.patch('/:orderId', OrderController.update);
 
-router.delete('/:orderId', (req, res) => {
-  res.send('OK');
-});
+router.delete('/:orderId', OrderController.delete);
 
 export default router;
