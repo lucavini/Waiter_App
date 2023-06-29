@@ -21,6 +21,12 @@ class CategoryRepository {
 
     return products;
   }
+
+  async deleteCategory(id: string) {
+    await Category.findByIdAndDelete(id);
+    
+    return 204;
+  }
 }
 
 export default new CategoryRepository();

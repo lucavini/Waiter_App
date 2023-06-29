@@ -53,6 +53,18 @@ class CategoryController {
       res.sendStatus(500);
     }
   }
+
+  async delete(req: Request, res: Response){
+    try {
+      const { categoryId } = req.params;
+      await CategoryRepository.deleteCategory(categoryId);
+
+      res.sendStatus(204);
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
+  }
 }
 
 export default new CategoryController();
