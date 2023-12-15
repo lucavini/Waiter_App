@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "types": ["node"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "baseUrl": "./src",
+    "paths": {
+      "~Styles/*": ["./App/Styles/*"],
+      "@Pages/*": ["./App/Pages/*"],
+      "@Components/*": ["./App/components/*"],
+      "@Assets/*": ["./App/assets/*"],
+      "@Atoms/*": ["./App/components/atomic/atoms/*"],
+      "@Molecules/*": ["./App/components/atomic/molecules/*"],
+      "@Organisms/*": ["./App/components/atomic/organisms/*"],
+      "@Hooks/*": ["./App/hooks/*"],
+      "~Shared/*": ["./Shared/*"],
+      "~Services/*": ["./Shared/Services/*"],
+    },
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
