@@ -28,6 +28,8 @@ export const Buttom = styled(NavLink)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 14px;
+  
 
   width: 100%;
   height: 100px;
