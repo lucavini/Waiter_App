@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@Atoms/Buttom';
-import ReactPortal from '@Components/ReactPortal';
+import ReactPortal from '~Shared/Utils/ReactPortal';
 import Title from '@Components/atomic/atoms/Title';
 import { Overlay, Container, Footer } from './styles';
 
