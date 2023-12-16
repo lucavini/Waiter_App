@@ -1,8 +1,8 @@
 export default {
   primary: {
-    light: '#4773C8',
-    main: '#2851A0',
-    dark: '#224587',
+    light: '#FFABAD',
+    main: '#D73035',
+    dark: '#8A1114',
   },
 
   gray: {
@@ -13,7 +13,7 @@ export default {
 
   plain: {
     light: '#FFFFFF',
-    main: '#F2F2F2',
+    main: '#FAFAFA',
     dark: '#CCCCCC',
   },
 
