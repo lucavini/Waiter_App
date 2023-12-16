@@ -5,6 +5,7 @@ import SubTitle from '@Atoms/Subtitle';
 import LateralMenu from './LateralMenu';
 
 import { Container, Section, Header, Content } from './styles';
+import { useTheme } from 'styled-components';
 
 type IProps = {
   children: React.ReactNode;
@@ -14,6 +15,8 @@ type IProps = {
 };
 
 function Template({ children, title, subtitle, Icon }: IProps) {
+  const theme = useTheme();
+
   return (
     <>
       <LateralMenu />
@@ -21,7 +24,7 @@ function Template({ children, title, subtitle, Icon }: IProps) {
         <Section>
           <Header>
             <div>
-              <Icon stroke="#333333" />
+              <Icon stroke={theme.gray.dark} />
               <Title>{title}</Title>
             </div>
             <SubTitle>{subtitle}</SubTitle>
