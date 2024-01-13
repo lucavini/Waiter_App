@@ -1,3 +1,5 @@
+import { Status } from './Enums';
+
 export as namespace models;
 
 export interface Category {
@@ -6,7 +8,7 @@ export interface Category {
   icon: string;
 }
 
-export type Ingredients = Category 
+export type Ingredients = Category;
 
 export interface Product {
   _id: string;
@@ -21,7 +23,7 @@ export interface Product {
 export interface Order {
   _id: string;
   table: string;
-  status: string;
+  status: keyof typeof Status;
   products: {
     product: Product;
     quantity: number;
