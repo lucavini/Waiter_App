@@ -43,33 +43,38 @@ function Modal({
   return (
     <ReactPortal containerId="modal-root">
       <Overlay onClick={() => setVisible(false)}>
-        <Container onClick={e => e.stopPropagation()}>
+        <Container onClick={(e) => e.stopPropagation()}>
           <Title>{title}</Title>
 
           <div className="modal-body">{children}</div>
 
-          <Footer>
-            <div>
-              {cancelButtonProps && (
-                <Button
-                  variation="tertiary"
-                  disabled={isLoading}
-                  danger
-                  {...cancelButtonProps}
-                >
-                  {cancelButtonProps?.label ?? 'Cancelar'}
-                </Button>
-              )}
-            </div>
+          {confirmButtonProps && confirmButtonProps && (
+            <Footer>
+              <div>
+                {cancelButtonProps && (
+                  <Button
+                    variation="tertiary"
+                    disabled={isLoading}
+                    danger
+                    {...cancelButtonProps}
+                  >
+                    {cancelButtonProps?.label ?? 'Cancelar'}
+                  </Button>
+                )}
+              </div>
 
-            <div>
-              {confirmButtonProps && (
-                <Button disabled={isLoading} {...confirmButtonProps}>
-                  {confirmButtonProps?.label ?? 'Confirmar'}
-                </Button>
-              )}
-            </div>
-          </Footer>
+              <div>
+                {confirmButtonProps && (
+                  <Button
+                    disabled={isLoading}
+                    {...confirmButtonProps}
+                  >
+                    {confirmButtonProps?.label ?? 'Confirmar'}
+                  </Button>
+                )}
+              </div>
+            </Footer>
+          )}
         </Container>
       </Overlay>
     </ReactPortal>
